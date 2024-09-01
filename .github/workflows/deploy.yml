@@ -19,4 +19,5 @@ jobs:
       - name: Test with pytest
         run: |
           pip install pytest
+          cd flaskapp
           pytest test_appy.py
