@@ -43,6 +43,6 @@ jobs:
           sudo apt install python3 -y &&
           sudo apt-get install python3-pip -y &&
           cd flaskapp
-          pip install -r requirements.tx
+          pip install -r requirements.txt
           '
             
