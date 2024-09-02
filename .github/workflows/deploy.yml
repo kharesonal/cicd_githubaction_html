@@ -37,5 +37,5 @@ jobs:
            PATH: "/home/ubuntu"
         run: |
           echo "$PRIVATE_KEY" > private_key && /bin/chmod 600 private_key
-          /bin/scp -i private_key -r flaskapp ${USER_NAME}@${HOSTNAME}:${PATH}
+          /bin/scp -o StrictHostKeyChecking=no -i private_key -r flaskapp ${USER_NAME}@${HOSTNAME}:${PATH}
             
