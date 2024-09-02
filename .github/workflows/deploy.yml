@@ -30,6 +30,10 @@ jobs:
           cd flaskapp
           pytest test_app.py
       - name: Copy flaskapp into EC2 instance
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
         run: |
-          scp -i EC2_SSH_KEY -r flaskapp ubuntu@13.208.187.149:/home/ubuntu
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          ssh-add <(echo "$SSH_PRIVATE_KEY")
+          scp -o StrictHostKeyChecking=no -r flaskapp ${EC2_USER}@${EC2_HOST}:/home/ubuntu
             
