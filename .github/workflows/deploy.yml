@@ -44,5 +44,6 @@ jobs:
           sudo apt-get install python3-pip -y &&
           cd flaskapp
           pip install -r requirements.txt --break-system-packages
+          python3 app.py
           '
             
