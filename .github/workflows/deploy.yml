@@ -36,6 +36,6 @@ jobs:
            USER_NAME: ${{secrets.USER_NAME}}
            PATH: "/home/ubuntu"
         run: |
-          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          echo "$PRIVATE_KEY" > private_key && /bin/chmod 600 private_key
           scp -i private_key -r flaskapp ${USER_NAME}@${HOSTNAME}:${PATH}
             
