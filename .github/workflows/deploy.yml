@@ -31,5 +31,5 @@ jobs:
           pytest test_app.py
       - name: Copy flaskapp into EC2 instance
         run: |
-          scp -r flaskapp ubuntu@13.208.187.149:/home/ubuntu
+          scp -i EC2_SSH_KEY -r flaskapp ubuntu@13.208.187.149:/home/ubuntu
             
