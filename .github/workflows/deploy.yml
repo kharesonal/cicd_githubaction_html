@@ -40,6 +40,7 @@ jobs:
           /bin/scp -o StrictHostKeyChecking=no -i private_key -r ./flaskapp ${USER_NAME}@${HOSTNAME}:${DESTINATION_PATH}
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
           sudo apt-get update -y &&
+          sudo apt install python3 -y &&
           sudo apt-get install python3-pip -y &&
           cd flaskapp
           pip install -r requirements.tx
