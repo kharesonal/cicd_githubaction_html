@@ -6,8 +6,8 @@ on:
       - published
 
 jobs:
-  build:
-
+  deploy:
+    if: github.ref == 'refs/heads/main' # Replace 'main' with your specific branch
     runs-on: ubuntu-latest
 
     steps:
