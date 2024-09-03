@@ -4,6 +4,9 @@ on:
   release:
     types: 
       - published
+    branches:
+      - "main"
+      
 
 jobs:
   build:
