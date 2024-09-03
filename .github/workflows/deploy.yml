@@ -29,3 +29,19 @@ jobs:
           pip install pytest
           cd flaskapp
           pytest test_app.py
+      - name: Copy flaskapp into EC2 instance
+        env:
+           PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+           HOSTNAME: ${{secrets.SSH_HOST}}
+           USER_NAME: ${{secrets.USER_NAME}}
+           DESTINATION_PATH: "/home/ubuntu"
+        run: |
+          echo "$PRIVATE_KEY" > private_key && /bin/chmod 600 private_key
+          /bin/scp -o StrictHostKeyChecking=no -i private_key -r ./flaskapp ${USER_NAME}@${HOSTNAME}:${DESTINATION_PATH}
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          sudo apt-get update -y &&
+          sudo apt install python3 -y &&
+          sudo apt-get install python3-pip -y &&
+          cd flaskapp
+          pip install -r requirements.txt --break-system-packages
+          python3 app.py &
