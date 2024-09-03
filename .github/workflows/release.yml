@@ -37,7 +37,7 @@ jobs:
            DESTINATION_PATH: "/home/ubuntu"
         run: |
           echo "$PRIVATE_KEY" > private_key && /bin/chmod 600 private_key
-          /bin/scp -o StrictHostKeyChecking=no -i private_key -r ./flaskapp ${USER_NAME}@${HOSTNAME}:${DESTINATION_PATH}
+          /bin/scp -o StrictHostKeyChecking=no -i private_key -r ./flaskapp ${USER_NAME}@${HOSTNAME_PRODUCTION}:${DESTINATION_PATH}
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME_PRODUCTION} '
           sudo apt-get update -y &&
           sudo apt install python3 -y &&
