@@ -75,7 +75,7 @@ jobs:
         with:
           # Semantic version range syntax or exact version of a Python version
           python-version: '3.x'
-      # You can test your matrix by printing the current Python version
+      # Install the dependencies 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
