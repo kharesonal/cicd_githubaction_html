@@ -25,37 +25,8 @@ The objective of this project is to automate the CI/CD pipeline for a Python Fla
     * HTTP (port 80)
   * Ensure Public IP:
     Make sure your EC2 instance is assigned a public IP so it is accessible over the internet.
+
     
-2. SSH into Your EC2 Instance
-
-     `ssh -i your_key.pem ubuntu@your_ec2_ip`.
-   
-3. Install Necessary Software on EC2 Instance
-
-  * Install Python 3 and pip:
-      
-    ```
-        sudo apt update
-        sudo apt install python3-pip -y
-    ```
-    
-  
-
-
-  * Configure Flask App on EC2
-      
-       1 . Install Flask and Dependencies:
-
-        `pip install -r requirements.txt`
-
-       2.Run Flask App Using gunicorn:Install gunicorn and run the Flask app directly
-
-       ```
-       pip install gunicorn
-       
-       gunicorn -w 4 app:app 
-      ```
-
 **Step 3. Set Up GitHub Secrets**
 To securely connect GitHub Actions to your EC2 instance, you’ll need to add a few secrets to your GitHub repository. Follow these steps:
 
@@ -64,8 +35,13 @@ To securely connect GitHub Actions to your EC2 instance, you’ll need to add a 
 3.Add the following secrets:
 
        SSH_PRIVATE_KEY: The private key for accessing your EC2 instance.
-       SSH_HOST: The public IP of your EC2 instance.
+       SSH_HOST: The public IP of your staging EC2 instance.
        USER_NAME: The username for SSH access.
+       HOSTNAME_PRODUCTION:The public IP of your production instance
+
+      ![image](https://github.com/user-attachments/assets/82f2fc29-7abd-4a39-b6b7-832c1ff5909e)
+
+
 
 **Step 4. Configuring GitHub Actions**
 
