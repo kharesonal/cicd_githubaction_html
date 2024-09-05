@@ -38,8 +38,8 @@ To securely connect GitHub Actions to your EC2 instance, you’ll need to add a 
        SSH_HOST: The public IP of your staging EC2 instance.
        USER_NAME: The username for SSH access.
        HOSTNAME_PRODUCTION:The public IP of your production instance
+   ![secrets](https://github.com/user-attachments/assets/bed9b00d-6709-4796-9667-59a4b4661689)
 
-![secrets](https://github.com/user-attachments/assets/c7a2b9a3-9202-4e18-9c43-c1e347bd1edb)
        
 
 **Step 4. Configuring GitHub Actions**
