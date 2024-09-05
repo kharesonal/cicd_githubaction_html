@@ -54,6 +54,7 @@ To securely connect GitHub Actions to your EC2 instance, you’ll need to add a 
         └── deploy.yml
  ```
  2. Define the GitHub Actions Workflow:
+    
 ***Deployment to Staging Server***
 ```yaml
 name: Python package
