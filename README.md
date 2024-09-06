@@ -170,14 +170,15 @@ jobs:
    * Create a new release by going to the Releases section in your GitHub repository.
    * Click Draft a new release and create a new release tag (e.g., v0.0.7). This will trigger the GitHub Actions workflow to deploy the application to the 
    production environment.
+
+![Screenshot 2024-09-04 005934](https://github.com/user-attachments/assets/f23b941a-199f-4993-bfb9-1df8e8d78ceb)
+
 ![Screenshot 2024-09-04 005818](https://github.com/user-attachments/assets/13c9e4e0-bb04-4d9b-a941-a584e39882f8)
 
 
 **Step 6: Access the Application:**
 
-After a successful deployment, you can access your Flask application via the EC2 instance's public IP and port 8000:
-
-  ` http://your-ec2-ip:8000`
+After a successful deployment, you can access your Flask application via the EC2 instance's public IP.
 
             
 
